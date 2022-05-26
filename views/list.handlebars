@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+   <h1 class="heading">List Of Employees</h1>
+   
+    <table class="table">
+  <thead>
+    <th>Full Name</th>
+    <th>Email Id</th>
+    <th>Mobile</th>
+    <th>City</th>
+    <th><button><a style="text-decoration:none ; color:black" href="/">Create New</a></button></th>
+  </thead>
+  <tbody>
+    {{#each list}}
+    <tr>
+      <td>{{this.fullname}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.mobile}}</td>
+      <td>{{this.city}}</td>
+      <td><a href="/update/{{this._id}}"><i class="bi bi-pencil">Update</i></a></td>
+      <td><a href="/delete/{{this._id}}" onclick="return confirm_alert("Are you sure to delete the record");"><i class="bi bi-trash ">Delete</i></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</body>
+
+</html>
+<style>
+  .table{
+    border:1px double black;
+    margin-left: 100px;
+    width: 70%;
+  }
+  .heading{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  
+  }
+</style>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .input {
+        width: max-content;
+    }
+    .heading{
+         text-transform: uppercase;
+         text-align: center;
+         font-size:3em;
+         font-weight:600;
+    }
+</style>
+<h1 class="heading">{{heading}}</h1>
+
+<body>
+    <form action="/employee" method="POST" class="form">
+        <input type="hidden" name="_id" value='{{employee._id}}'>
+
+        <label for="name">First Name</label>
+        <input class='input' type="text" placeholder="name" name="name">
+
+
+        <label for="email">Emailid</label>
+        <input class='input' type="email" placeholder="Email" name="email">
+
+
+        <label for="mobile">Mobile</label>
+        <input  class='input' type="text" placeholder="Minimum of 10 digits" name="mobile">
+
+
+        <label for="city"> City</label>
+        <input class='input' type="text" placeholder="" name="city">
+        </br>
+        <button id="submit" type="submit">Submit</button>
+        <button><a style="text-decoration:none ; color:black" href="/employee/list">View All</a></button>
+
+    </form>
+    
+
+</body>
+<style>
+    .form {
+        max-width: 1000px;
+        margin: 2rem auto;
+        border: 2px solid black;
+        padding: 2rem;
+
+    }
+
+    label {
+        display: block;
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    input {
+        display: block;
+        
+    }
+    .input{
+        width: 700px;
+    }
+    #submit{
+        transform: translate(20,1000);
+    }
+</style>
+
+</html>
